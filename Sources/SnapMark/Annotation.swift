@@ -231,7 +231,7 @@ enum Annotation {
         }
     }
 
-    /// 尾部细、头部粗的箭头，和微信的样式类似
+    /// 尾部细、头部粗的箭头
     static func arrowPath(from a: CGPoint, to b: CGPoint, width w: CGFloat) -> CGPath {
         let length = hypot(b.x - a.x, b.y - a.y)
         let headLength = min(length, max(14, w * 4.5))
