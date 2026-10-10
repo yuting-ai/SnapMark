@@ -1,7 +1,7 @@
 import AppKit
 
-/// 渲染演示截图（网站、README 用）：SnapMark --snapshot <输出目录>
-/// 用一张虚构的"订单详情"窗口作为桌面，叠上真实的选区、标注和工具条，输出 snapmark-zh.png / snapmark-en.png
+/// 渲染演示截图（网站、README 用）：Snipnote --snapshot <输出目录>
+/// 用一张虚构的"订单详情"窗口作为桌面，叠上真实的选区、标注和工具条，输出 snipnote-zh.png / snipnote-en.png
 @MainActor
 enum Snapshot {
     private static let canvas = CGSize(width: 960, height: 600)
@@ -13,7 +13,7 @@ enum Snapshot {
         try? FileManager.default.createDirectory(at: outputDirectory, withIntermediateDirectories: true)
         for language in [Language.zh, .en] {
             L10n.override = language
-            let url = outputDirectory.appendingPathComponent("snapmark-\(language.rawValue).png")
+            let url = outputDirectory.appendingPathComponent("snipnote-\(language.rawValue).png")
             render(Demo(chinese: language == .zh), to: url)
             print("✅ \(url.path)")
         }

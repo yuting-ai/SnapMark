@@ -17,7 +17,7 @@ final class HotKey {
         HotKey.handlers[id] = handler
         HotKey.installHandlerIfNeeded()
 
-        let hotKeyID = EventHotKeyID(signature: OSType(0x534E_4D4B), id: id) // 'SNMK'
+        let hotKeyID = EventHotKeyID(signature: OSType(0x534E_504E), id: id) // 'SNPN'
         let status = RegisterEventHotKey(keyCode, modifiers, hotKeyID, GetApplicationEventTarget(), 0, &ref)
         isRegistered = status == noErr
     }

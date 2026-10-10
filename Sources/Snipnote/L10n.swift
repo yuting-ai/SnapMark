@@ -31,14 +31,14 @@ enum L10n {
     static var capture: String { t("截图", "Take Screenshot") }
     static var settingsMenu: String { t("设置…", "Settings…") }
     static var launchAtLogin: String { t("开机自动启动", "Launch at Login") }
-    static var quit: String { t("退出 SnapMark", "Quit SnapMark") }
+    static var quit: String { t("退出 Snipnote", "Quit Snipnote") }
     static func hotKeyFailedMenu(_ key: String) -> String {
         t("⚠️ 快捷键 \(key) 注册失败，点此修改", "⚠️ Shortcut \(key) unavailable, click to change")
     }
 
     // MARK: 设置窗口
 
-    static var settingsTitle: String { t("SnapMark 设置", "SnapMark Settings") }
+    static var settingsTitle: String { t("Snipnote 设置", "Snipnote Settings") }
     static var shortcutLabel: String { t("截图快捷键", "Shortcut") }
     static var languageLabel: String { t("语言", "Language") }
     static func languageName(_ l: Language) -> String {
@@ -70,8 +70,8 @@ enum L10n {
 
     static var captureFailedTitle: String { t("无法截屏", "Unable to Capture Screen") }
     static var captureFailedInfo: String {
-        t("请在「系统设置 → 隐私与安全性 → 屏幕与系统音频录制」中允许 SnapMark，然后退出并重新打开 SnapMark。",
-          "Allow SnapMark in System Settings → Privacy & Security → Screen & System Audio Recording, then quit and reopen SnapMark.")
+        t("请在「系统设置 → 隐私与安全性 → 屏幕与系统音频录制」中允许 Snipnote，然后退出并重新打开 Snipnote。",
+          "Allow Snipnote in System Settings → Privacy & Security → Screen & System Audio Recording, then quit and reopen Snipnote.")
     }
     static var openSystemSettings: String { t("打开系统设置", "Open System Settings") }
     static var cancel: String { t("取消", "Cancel") }

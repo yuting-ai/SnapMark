@@ -3,7 +3,7 @@ import AppKit
 MainActor.assumeIsolated {
     let app = NSApplication.shared
 
-    // SnapMark --snapshot <输出目录>：渲染中英文演示截图后退出
+    // Snipnote --snapshot <输出目录>：渲染中英文演示截图后退出
     let args = CommandLine.arguments
     if let i = args.firstIndex(of: "--snapshot"), i + 1 < args.count {
         Snapshot.run(outputDirectory: URL(fileURLWithPath: args[i + 1]))

@@ -5,7 +5,7 @@ import AppKit
 
 let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 let resources = root.appendingPathComponent("Resources")
-let tmp = FileManager.default.temporaryDirectory.appendingPathComponent("snapmark-assets-\(getpid())")
+let tmp = FileManager.default.temporaryDirectory.appendingPathComponent("snipnote-assets-\(getpid())")
 try? FileManager.default.createDirectory(at: resources, withIntermediateDirectories: true)
 try? FileManager.default.createDirectory(at: tmp, withIntermediateDirectories: true)
 
@@ -137,7 +137,7 @@ func drawBackground(_ ctx: CGContext) {
     let gradient = CGGradient(colorsSpace: nil, colors: [color(0xF8FAFC), color(0xE8EDF3)] as CFArray, locations: [0, 1])!
     ctx.drawLinearGradient(gradient, start: CGPoint(x: 0, y: H), end: CGPoint(x: 0, y: 0), options: [])
 
-    drawText("SnapMark", size: 24, weight: .bold, hex: 0x1F2937, centerY: 48)
+    drawText("Snipnote", size: 24, weight: .bold, hex: 0x1F2937, centerY: 48)
 
     // 两个图标之间的箭头
     let y = H - 190
@@ -155,8 +155,8 @@ func drawBackground(_ ctx: CGContext) {
     ctx.addLine(to: CGPoint(x: 368, y: y - 14))
     ctx.strokePath()
 
-    drawText("将 SnapMark 拖到 Applications 文件夹即可完成安装", size: 14, weight: .medium, hex: 0x374151, centerY: 330)
-    drawText("Drag SnapMark to the Applications folder to install", size: 12, weight: .regular, hex: 0x6B7280, centerY: 354)
+    drawText("将 Snipnote 拖到 Applications 文件夹即可完成安装", size: 14, weight: .medium, hex: 0x374151, centerY: 330)
+    drawText("Drag Snipnote to the Applications folder to install", size: 12, weight: .regular, hex: 0x6B7280, centerY: 354)
 }
 
 let bg1 = tmp.appendingPathComponent("dmg-background.png")

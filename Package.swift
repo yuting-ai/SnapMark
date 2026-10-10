@@ -2,9 +2,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "SnapMark",
+    name: "Snipnote",
     platforms: [.macOS(.v14)],
     targets: [
-        .executableTarget(name: "SnapMark", path: "Sources/SnapMark")
+        .executableTarget(name: "Snipnote", path: "Sources/Snipnote")
     ]
 )

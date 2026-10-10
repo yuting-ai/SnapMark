@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>SnapMark</string>
+	<string>Snipnote</string>
 	<key>CFBundleExecutable</key>
-	<string>SnapMark</string>
+	<string>Snipnote</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.bitydev.snapmark</string>
+	<string>me.lepton.snipnote</string>
 	<key>CFBundleName</key>
-	<string>SnapMark</string>
+	<string>Snipnote</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
 	<key>LSUIElement</key>

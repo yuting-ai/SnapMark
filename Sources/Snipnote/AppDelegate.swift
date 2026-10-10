@@ -13,13 +13,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let warningItem = NSMenuItem(title: "", action: #selector(openSettings), keyEquivalent: "")
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // 供安装脚本使用：open SnapMark.app --args --enable-launch-at-login
+        // 供安装脚本使用：open Snipnote.app --args --enable-launch-at-login
         if CommandLine.arguments.contains("--enable-launch-at-login") {
             do {
                 if SMAppService.mainApp.status != .enabled { try SMAppService.mainApp.register() }
-                NSLog("SnapMark launch at login status: \(SMAppService.mainApp.status.rawValue)")
+                NSLog("Snipnote launch at login status: \(SMAppService.mainApp.status.rawValue)")
             } catch {
-                NSLog("SnapMark launch at login failed: \(error)")
+                NSLog("Snipnote launch at login failed: \(error)")
             }
         }
 
@@ -33,7 +33,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func setupStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        let icon = NSImage(systemSymbolName: "scissors", accessibilityDescription: "SnapMark")
+        let icon = NSImage(systemSymbolName: "scissors", accessibilityDescription: "Snipnote")
         icon?.isTemplate = true
         statusItem.button?.image = icon
         buildMenu()

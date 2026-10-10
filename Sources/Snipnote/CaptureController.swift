@@ -74,7 +74,7 @@ final class CaptureController {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH.mm.ss"
             let desktop = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0]
-            let url = desktop.appendingPathComponent("SnapMark \(formatter.string(from: Date())).png")
+            let url = desktop.appendingPathComponent("Snipnote \(formatter.string(from: Date())).png")
             try? png.write(to: url)
         }
         close()
