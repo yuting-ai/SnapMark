@@ -1,81 +1,151 @@
 # SnapMark
 
-轻量的 macOS 菜单栏截图工具，交互参考微信截图。截图完成后自动复制到剪贴板。
+[中文](README.zh-CN.md) | **English**
 
-<p align="center"><img src="docs/images/snapmark-zh.png" width="720" alt="SnapMark 截图界面：矩形、箭头、文字和马赛克标注，下方是工具条"></p>
+A lightweight menu bar screenshot tool for macOS: select a window or region, annotate it, and press Return — the image is on your clipboard, ready to paste into a chat, an email or a document.
 
-## 下载
+<p align="center"><img src="docs/images/snapmark-en.png" width="720" alt="SnapMark capturing an order window: a rectangle around an error, an arrow with a note, a mosaic over the phone number, and the toolbar below"></p>
 
-**[⬇ 下载 SnapMark（macOS）](https://github.com/yuting-ai/SnapMark/releases/latest/download/SnapMark.dmg)** · 介绍页：[lepton.me/snapmark](https://lepton.me/snapmark)
+## Download
 
-macOS 14 或更高版本 · Apple 芯片和 Intel 均可 · 已通过 Apple 公证 · 免费开源（MIT）
+**[⬇ Download SnapMark for macOS](https://github.com/yuting-ai/SnapMark/releases/latest/download/SnapMark.dmg)**
 
-## 使用
+macOS 14 or later · Apple silicon & Intel · Notarized by Apple · Free and open source (MIT)
 
-| 操作 | 说明 |
+Website: [lepton.me/snapmark](https://lepton.me/snapmark) · All versions and release notes: [Releases](https://github.com/yuting-ai/SnapMark/releases)
+
+## Features
+
+- **Smart window detection**: hover to highlight a window and click to select it (click the desktop for the whole screen), or drag to capture any region and adjust its edges.
+- **Six annotation tools**: rectangle, ellipse, arrow, pen, text and mosaic, with a slider for line width (font size for text) and a color palette.
+- **Edit anything**: click an annotation to move it or change its size and color, press `⌫` to delete it, double-click text to edit it, and `⌘Z` to undo. New annotations are selected automatically so you can tweak them right away.
+- **Straight to the clipboard**: press Return or double-click the selection to copy. `⌘S` also saves a PNG to the Desktop.
+- **Custom shortcut**: `⌃⌥A` by default — change it to anything you like. SnapMark warns you if it clashes with a system shortcut.
+- **Multi-display and Retina**: works on every display and exports at native resolution.
+- **English and Chinese**: follows your system language, or switch it in Settings.
+- **Tiny and quiet**: lives in the menu bar and can launch at login. No network access, no data collection.
+
+## Requirements
+
+- macOS 14 or later (Apple silicon or Intel)
+
+## Install
+
+1. [Download SnapMark.dmg](https://github.com/yuting-ai/SnapMark/releases/latest/download/SnapMark.dmg), open it, and drag SnapMark into Applications.
+2. Open SnapMark. It has no window or Dock icon — look for the scissors icon in the **menu bar** at the top right of the screen.
+3. On your first capture, macOS asks for permission: turn on SnapMark in System Settings → Privacy & Security → Screen & System Audio Recording, then **quit and reopen** SnapMark (the permission takes effect after a restart).
+4. Press `⌃⌥A` to take a screenshot.
+
+> **Why Screen Recording permission?** macOS requires it for any app that captures the screen. SnapMark has no network access — screenshots only go to the clipboard, or to the Desktop when you press `⌘S`.
+
+## Usage
+
+| Action | What it does |
 |---|---|
-| `⌃⌥A` | 开始截图（默认快捷键，可在菜单栏「设置…」里修改；也可以点菜单栏的剪刀图标） |
-| 悬停 + 单击 | 自动选中鼠标下的窗口（在桌面上单击是全屏） |
-| 拖动 | 框选区域；拖边或角调整大小，拖内部移动，方向键微调（⇧ 每次 10pt） |
-| 工具条 | 矩形 / 椭圆 / 箭头 / 画笔 / 文字 / 马赛克，第二行用滑块调粗细（文字是字号）和颜色 |
-| 点击已有标注 | 选中（虚线框），可以拖动、方向键微调、用滑块改粗细/字号、换颜色，`⌫` 删除 |
-| 双击已有文字 | 重新编辑文字内容 |
-| `↩` / 双击选区 / ✓ | 完成，复制到剪贴板 |
-| `⌘S` / 保存按钮 | 复制到剪贴板，同时保存 PNG 到桌面 |
-| `⌘Z` | 撤销 |
-| `Esc` / 右键 | 取消（有选区但还没标注时，右键会先清掉选区） |
+| `⌃⌥A` | Start a capture (or click the scissors icon in the menu bar) |
+| Hover + click | Select the window under the pointer |
+| Drag | Select a region; drag an edge or corner to resize, drag inside to move, arrow keys to nudge (hold `⇧` for 10 points) |
+| Toolbar | Pick an annotation tool; the second row sets width / font size and color. Click the active tool again to go back to moving the selection |
+| Click an annotation | Select it to drag, nudge, change width / font size and color, or press `⌫` to delete |
+| Double-click text | Edit the text |
+| `↩` / double-click / ✓ | Finish and copy to the clipboard |
+| `⌘S` / Save button | Copy to the clipboard and save a PNG to the Desktop |
+| `⌘Z` | Undo |
+| `Esc` / right-click | Cancel (with a selection but no annotations, right-click clears the selection first) |
 
-界面支持中文和 English，在菜单栏「设置…」里切换（默认跟随系统语言）。
+Text tool: click to start typing, press `↩` or click elsewhere to finish, `⌥↩` for a new line. Line width and font size are remembered for the next capture.
 
-文字工具：单击开始输入，`↩` 或点别处结束，`⌥↩` 换行。字号用第二行的滑块调（12–72），输入时拖动会实时生效。新画的标注会自动选中，可以马上调大小。粗细、字号会记住，下次截图沿用。
+The menu bar menu also has:
 
-## 构建
+| Menu item | What it does |
+|---|---|
+| Settings… | Change the capture shortcut and the interface language |
+| Launch at Login | Open SnapMark automatically when you log in |
+
+## FAQ
+
+**The shortcut doesn't do anything?**
+Another app may be using it. Click the scissors icon → Settings… and choose a different combination. If it clashes with a system shortcut, the Settings window tells you where to turn that one off.
+
+**I granted Screen Recording, but capturing still fails?**
+The permission only takes effect after SnapMark restarts. Quit SnapMark from the menu bar and open it again.
+
+**Too much mosaic?**
+Press `⌘Z`, or deselect the mosaic tool, click the mosaic stroke and press `⌫`.
+
+## Uninstall
+
+Quit SnapMark from its menu bar menu and drag it from Applications to the Trash. If you turned on Launch at Login, untick it in the menu first.
+
+## Development
+
+Requires the Xcode command line tools (Swift 5.9 or later). There is no Xcode project.
 
 ```bash
-./build.sh            # 生成 build/SnapMark.app
-./build.sh --install  # 编译后安装到 /Applications、开启开机自启并重新启动（以后更新也用这个）
-./build.sh --release  # 分发版：Universal（Apple 芯片 + Intel）+ Developer ID 签名 + 公证 → dist/SnapMark-<版本>.dmg
+./build.sh            # build and package build/SnapMark.app
+./build.sh --install  # same, then install to /Applications, enable launch at login and relaunch
 ```
 
-### 分发版的公证凭证（只需设置一次）
+`build.sh` signs with the Apple Development certificate in your keychain, so the Screen Recording permission survives rebuilds. Set `SIGN_IDENTITY` to use a different certificate.
 
-1. 在 https://appleid.apple.com →「登录与安全」→「App 专用密码」生成一个密码
-2. 运行下面的命令，按提示输入 Apple ID 和刚才的密码，凭证会存进钥匙串：
+Quit the installed SnapMark before running a development build, or you'll see two icons in the menu bar.
+
+| File | Contents |
+|---|---|
+| `Sources/SnapMark/AppDelegate.swift` | Menu bar icon and menu, shortcut registration, launch at login |
+| `Sources/SnapMark/CaptureController.swift` | One capture session: overlay windows on every display, copy, save |
+| `Sources/SnapMark/OverlayView.swift` | Selection, resizing, annotation interaction and export |
+| `Sources/SnapMark/Annotation.swift` | Annotation model, drawing and hit testing |
+| `Sources/SnapMark/Toolbar.swift` | The toolbar |
+| `Sources/SnapMark/ScreenCapturer.swift` | ScreenCaptureKit capture and window positions for detection |
+| `Sources/SnapMark/HotKey.swift` | Carbon global hotkey |
+| `Sources/SnapMark/Shortcut.swift` | Shortcut storage, display names, validation and system-conflict check |
+| `Sources/SnapMark/SettingsWindow.swift` | Settings window and the shortcut recorder |
+| `Sources/SnapMark/L10n.swift` | All interface text in Chinese and English |
+| `Sources/SnapMark/Snapshot.swift` | Renders the demo screenshots |
+
+### Screenshots and icon
+
+The screenshots in this README are rendered from a made-up window, so no real screen content appears. Regenerate both languages after changing the interface:
 
 ```bash
-xcrun notarytool store-credentials "SnapMark" --apple-id <你的 Apple ID> --team-id 3TJQ367JDZ
+build/SnapMark.app/Contents/MacOS/SnapMark --snapshot docs/images
 ```
 
-之后 `./build.sh --release` 会自动提交公证、等待结果、把公证票据附加（staple）到 DMG 上。如果公证没有通过，会打印 Apple 返回的详细原因。
-版本号取自 `Info.plist` 里的 `CFBundleShortVersionString`，发新版前记得改。
-
-DMG 打开后是带背景和箭头的拖拽安装窗口，由 [dmgbuild](https://github.com/dmgbuild/dmgbuild) 生成（首次运行时自动装进 `.build/dmgbuild-venv`），布局在 `scripts/dmg-settings.py`。
-
-### 图标和安装背景
-
-`Resources/AppIcon.icns` 和 `Resources/dmg-background.tiff` 由脚本绘制，改样式后重新生成：
+The app icon `Resources/AppIcon.icns` and the DMG background `Resources/dmg-background.tiff` are drawn by a script:
 
 ```bash
 swift scripts/make-assets.swift
 ```
 
-需要 macOS 14+。第一次截图时会请求「屏幕与系统音频录制」权限，授权后重新打开应用。
-`build.sh` 默认用钥匙串里的 Apple Development 证书签名，所以重新编译后权限不会失效。可以用 `SIGN_IDENTITY` 环境变量指定其他证书。
+### Localization
 
-## 代码结构
+All interface text lives in `Sources/SnapMark/L10n.swift`, each string written as `t("中文", "English")`.
 
-- `AppDelegate.swift`：菜单栏图标、快捷键、开机自启
-- `HotKey.swift`：Carbon 全局快捷键
-- `Shortcut.swift`：快捷键的保存、显示名、合法性和系统快捷键冲突检测
-- `SettingsWindow.swift`：设置窗口（快捷键、语言）和快捷键录制按钮
-- `L10n.swift`：所有界面文字的中英文
-- `Snapshot.swift`：渲染演示截图（`SnapMark.app/Contents/MacOS/SnapMark --snapshot docs/images`），用虚构的窗口，不会出现真实屏幕内容
-- `ScreenCapturer.swift`：ScreenCaptureKit 截屏，以及读取窗口位置用于自动识别
-- `CaptureController.swift`：一次截图的完整流程：多屏遮罩窗口、复制、保存
-- `OverlayView.swift`：框选、调整、标注交互，以及导出
-- `Annotation.swift`：标注的数据模型和绘制
-- `Toolbar.swift`：工具条
+### Releasing
 
-## 许可
+`./build.sh --release` does it all in one command: universal build (Apple silicon + Intel) → Developer ID signing with the hardened runtime → DMG with a background → notarization and stapling → Gatekeeper check. The output is `dist/SnapMark-<version>.dmg`, plus a copy at `dist/SnapMark.dmg`.
 
-[MIT](LICENSE)
+The DMG is built with [dmgbuild](https://github.com/dmgbuild/dmgbuild), installed automatically into `.build/dmgbuild-venv` on first run. The layout is in `scripts/dmg-settings.py`.
+
+Before the first release, store the notarization credentials in your keychain (requires an app-specific password for your Apple ID):
+
+```bash
+xcrun notarytool store-credentials SnapMark --apple-id <Apple ID> --team-id 3TJQ367JDZ
+```
+
+To release a new version, update `CFBundleShortVersionString` in `Info.plist`, then run:
+
+```bash
+./build.sh --release
+```
+
+Publish to GitHub. Always upload the DMG as `SnapMark.dmg` so the download link (`releases/latest/download/SnapMark.dmg`) points to the latest version:
+
+```bash
+gh release create v1.1 dist/SnapMark.dmg --title "SnapMark 1.1" --notes "…"
+```
+
+## License
+
+SnapMark is released under the [MIT License](LICENSE).
