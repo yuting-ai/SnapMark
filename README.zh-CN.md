@@ -82,7 +82,7 @@ macOS 14 或更高版本 · Apple 芯片和 Intel 均可 · 已通过 Apple 公�
 需要 Xcode 命令行工具（Swift 5.9 或更高），不需要 Xcode 工程。
 
 ```bash
-./build.sh            # 编译并打包成 build/Snipnote.app
+./build.sh            # 编译并打包成 build.noindex/Snipnote.app
 ./build.sh --install  # 同上，并安装到 /Applications、开启开机自启并重新启动
 ```
 
@@ -109,7 +109,7 @@ macOS 14 或更高版本 · Apple 芯片和 Intel 均可 · 已通过 Apple 公�
 README 里的截图用一个虚构的窗口渲染，不会出现真实的屏幕内容。修改界面后重新生成中英文截图：
 
 ```bash
-build/Snipnote.app/Contents/MacOS/Snipnote --snapshot docs/images
+build.noindex/Snipnote.app/Contents/MacOS/Snipnote --snapshot docs/images
 ```
 
 应用图标 `Resources/AppIcon.icns` 和 DMG 安装背景 `Resources/dmg-background.tiff` 由脚本绘制：

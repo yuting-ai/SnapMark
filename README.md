@@ -82,7 +82,7 @@ Quit Snipnote from its menu bar menu and drag it from Applications to the Trash.
 Requires the Xcode command line tools (Swift 5.9 or later). There is no Xcode project.
 
 ```bash
-./build.sh            # build and package build/Snipnote.app
+./build.sh            # build and package build.noindex/Snipnote.app
 ./build.sh --install  # same, then install to /Applications, enable launch at login and relaunch
 ```
 
@@ -109,7 +109,7 @@ Quit the installed Snipnote before running a development build, or you'll see tw
 The screenshots in this README are rendered from a made-up window, so no real screen content appears. Regenerate both languages after changing the interface:
 
 ```bash
-build/Snipnote.app/Contents/MacOS/Snipnote --snapshot docs/images
+build.noindex/Snipnote.app/Contents/MacOS/Snipnote --snapshot docs/images
 ```
 
 The app icon `Resources/AppIcon.icns` and the DMG background `Resources/dmg-background.tiff` are drawn by a script:

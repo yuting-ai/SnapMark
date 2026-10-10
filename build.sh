@@ -1,6 +1,6 @@
 #!/bin/bash
 # 编译并打包 Snipnote
-#   ./build.sh            编译打包成 build/Snipnote.app（Apple Development 签名，本机使用）
+#   ./build.sh            编译打包成 build.noindex/Snipnote.app（Apple Development 签名，本机使用）
 #   ./build.sh --install  同上，并安装到 /Applications、开启开机自启并重新启动
 #   ./build.sh --release  Universal 版本 + Developer ID 签名 + 公证，输出可分发的 dist/Snipnote-<版本>.dmg
 #
@@ -11,7 +11,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 MODE="${1:-}"
-APP=build/Snipnote.app
+# 输出目录带 .noindex 后缀，Spotlight 不会把编译产物当成应用收录
+APP=build.noindex/Snipnote.app
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" Info.plist)
 
 # 按名称找钥匙串里第一张匹配的签名证书，输出它的 SHA-1
